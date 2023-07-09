@@ -1,6 +1,8 @@
 package org.example.util;
 
+import org.example.entity.Owner;
 import org.example.entity.Passport;
+import org.example.entity.Pet;
 import org.example.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,8 +14,13 @@ public class FactoryConfiguration {
 
     private FactoryConfiguration() {
         Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
-        configuration.addAnnotatedClass(User.class);
-        configuration.addAnnotatedClass(Passport.class);
+//
+//        configuration.addAnnotatedClass(User.class);
+//        configuration.addAnnotatedClass(Passport.class);
+
+        configuration.addAnnotatedClass(Owner.class);
+        configuration.addAnnotatedClass(Pet.class);
+
         sessionFactory = configuration.buildSessionFactory();
     }
 
